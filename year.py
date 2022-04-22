@@ -32,13 +32,13 @@ ax = year.plot.line(y='number of races', use_index=True, color=f1_color, figsize
 ax.set_xlabel("Year");
 ax.set_ylabel("Number of Races");
 ax.set_title("Number of Races over Time");
-plt.savefig('years.png')
+plt.savefig('screens/years.png')
 plt.show()
 plt.close()
 db = year.head(73)
 print(year.head(73))
 
-filepath = Path('year.csv')
+filepath = Path('csv/year.csv')
 filepath.parent.mkdir(parents=True, exist_ok=True)
 db.to_csv(filepath)
 
