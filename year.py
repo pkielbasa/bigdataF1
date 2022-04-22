@@ -9,6 +9,7 @@ racesUrl = "http://ergast.com/api/f1.json"  # website api url
 racesResponse = requests.get(racesUrl)
 racesJson = json.loads(racesResponse.text)
 races = pd.DataFrame.from_dict(racesJson["MRData"]["RaceTable"]["Races"])
+print(races)
 totalRaces = int(racesJson["MRData"]["total"])
 limitRaces = 100
 offsetRaces = 0
