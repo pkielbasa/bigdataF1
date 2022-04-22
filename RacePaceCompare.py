@@ -20,7 +20,7 @@ laps = race.load_laps()
 # Convert laptimes to seconds
 laps['LapTimeSeconds'] = laps['LapTime'].dt.total_seconds()
 # To get accurate laps only, we exclude in- and outlaps
-#laps = laps.loc[(laps['PitOutTime'].isnull() & laps['PitInTime'].isnull())]
+laps = laps.loc[(laps['PitOutTime'].isnull() & laps['PitInTime'].isnull())]
 # Also, we remove outliers since those don't represent the racepace,
 # using the Inter-Quartile Range (IQR) proximity rule
 q75, q25 = laps['LapTimeSeconds'].quantile(0.75), laps['LapTimeSeconds'].quantile(0.25)
@@ -98,6 +98,6 @@ for driver in drivers_to_visualize:
 
     # Add the team to the visualized teams variable so that the next time the linestyle will be different
     visualized_teams.append(team)
-    plt.savefig('racepace_comparison.png', dpi=300)
+    plt.savefig('screens/racepace_comparison.png', dpi=300)
 print(laptimes)
 plt.show()

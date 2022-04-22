@@ -100,10 +100,10 @@ plt.legend([],[], frameon=False)
 g.set(xlabel=None)
 g.set(ylabel=None)
 
-plt.savefig('qualifying_battles.png')
+plt.savefig('screens/qualifying_battles.png')
 
 plt.show()
 print(all_quali_battle_results)
-filepath = Path('qualifying.csv')
+filepath = Path('csv/qualifying.csv')
 filepath.parent.mkdir(parents=True, exist_ok=True)
 all_quali_battle_results.to_csv(filepath, index=False)

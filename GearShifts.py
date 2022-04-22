@@ -16,7 +16,6 @@ session.load()
 lap = session.laps.pick_fastest()
 tel = lap.get_telemetry()
 # sphinx_gallery_defer_figures
-print(tel)
 ##############################################################################
 # Prepare the data for plotting by converting it to the appropriate numpy
 # data types
@@ -60,5 +59,5 @@ title = plt.suptitle(
 cbar = plt.colorbar(mappable=lc_comp, label="Gear", boundaries=np.arange(1, 10))
 cbar.set_ticks(np.arange(1.5, 9.5))
 cbar.set_ticklabels(np.arange(1, 9))
-
+plt.savefig('screens/GearShifts.png')
 plt.show()

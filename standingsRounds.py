@@ -84,8 +84,8 @@ for line, name in zip(ax.lines, all_championship_standings.columns.tolist()):
         textcoords="offset points"
     )
 
-plt.savefig('championship_standings.png')
+plt.savefig('screens/championship_standings.png')
 plt.show()
-filepath = Path('championship_standings.csv')
+filepath = Path('csv/championship_standings.csv')
 filepath.parent.mkdir(parents=True, exist_ok=True)
 all_championship_standings_melted.to_csv(filepath, index=False)
